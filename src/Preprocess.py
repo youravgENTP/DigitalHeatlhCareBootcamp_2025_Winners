@@ -5,8 +5,8 @@ import cv2
 
 
 # Fundus masking
-def mask_fundus_circle(img, threshold: int = 10):
-  """Mask fundus region of an image by detecting the largest circular contour."""
+def mask_fundus_circle(img: np.ndarray, threshold: int = 10)->tuple:
+    """Mask fundus region of an image by detecting the largest circular contour."""
     if img.ndim == 3 and img.shape[2] == 3:
         gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     else:
@@ -24,13 +24,13 @@ def mask_fundus_circle(img, threshold: int = 10):
 
 # Artifact detection
 def is_crescent_artifact(
-    img,
+    img: np.ndarray,
     mask,
     outer_ring_width: int = 30,
     flare_ratio_thresh: float = 1.4,
     min_flare_area_ratio: float = 0.02,
-):
-  """Detect bright crescent or flare artifacts near the fundus edge."""
+)->bool:
+    """Detect bright crescent or flare artifacts near the fundus edge."""
     gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY) if img.ndim == 3 else img
     h, w = gray.shape
 
@@ -66,15 +66,15 @@ def is_crescent_artifact(
     return ring_spike or any_edge_spike
 
 
-def _ensure_uint8(img):
-  "Convert image to uint8 format in case it isn't."""
+def _ensure_uint8(img: np.ndarray)->np.ndarray:
+    """Convert image to uint8 format in case it isn't."""
     if img.dtype != np.uint8:
         return (img * 255).astype(np.uint8)
     return img
 
 
 def clean_and_collect(images: np.ndarray, labels: np.ndarray, bad_dir: str,
-                      outer_ring_width=30, flare_ratio_thresh=1.4, min_flare_area_ratio=0.02):
+                      outer_ring_width=30, flare_ratio_thresh=1.4, min_flare_area_ratio=0.02)->tuple:
     """Filter images by removing artifact-contaminated ones and save rejected samples."""
     os.makedirs(bad_dir, exist_ok=True)
     clean_images, clean_labels = [], []
@@ -103,8 +103,8 @@ def clean_and_collect(images: np.ndarray, labels: np.ndarray, bad_dir: str,
     return np.stack(clean_images), np.stack(clean_labels)
 
 
-def shuffle_and_split(images: np.ndarray, labels: np.ndarray, train_ratio=0.6, val_ratio=0.2, seed: int = 42):
-  """Shuffle dataset and split into train/val/test sets by ratio."""
+def shuffle_and_split(images: np.ndarray, labels: np.ndarray, train_ratio=0.6, val_ratio=0.2, seed: int = 42)->tuple:
+    """Shuffle dataset and split into train/val/test sets by ratio."""
     assert 0 < train_ratio < 1 and 0 <= val_ratio < 1 and train_ratio + val_ratio < 1
     rng = np.random.default_rng(seed)
     n = len(images)
@@ -133,7 +133,7 @@ def process_npz(
     outer_ring_width: int = 30,
     flare_ratio_thresh: float = 1.4,
     min_flare_area_ratio: float = 0.02,
-):
+)->None:
   """End-to-end preprocessing pipeline: load, clean, split, and save dataset."""
     if not os.path.isfile(input_npz):
         raise FileNotFoundError(f"Input NPZ not found: {input_npz}")
