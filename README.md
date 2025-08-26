@@ -2,13 +2,17 @@
 
 **Hyunmin Choi, Hojun Jeong, Hyungjin Yoon, Minseok Han, Junsoo Seo, Minkyeong Kim** <sub>All authors contributed equally</sub>
 
-![Project Thumbnail](스크린샷%202025-08-26%20오후%203.19.20.png)
+![Project Thumbnail](figures/01Thumnail.png)
 
 ---
 
 ### Summary
 
+![Project Thumbnail](figures/03Workflow.png)
+
 This project builds a reliable end-to-end pipeline for diabetic retinopathy (DR) screening that centers data quality, calibration, and interpretability. We re-labeled RetinaMNIST using ICDR grades (0–4), collapsing grades 1–4 into DR-positive and grade 0 into non-DR to form a clinically meaningful binary task. To control input quality, we targeted common optical artifacts: we first detected the circular fundus boundary and blackened all pixels outside it to remove text/markings; then we screened for crescent-shaped flare by comparing mean intensities in the outer ring (top/bottom/left/right) against the center. These procedures (see p.11 and the logic in `src/Preprocess.py`) reduce non-pathological cues and lighting bias before training.
+
+![Project Thumbnail](figures/02Data preprocessing.png)
 
 We trained ResNet-50 on RetinaMNIST and then transferred/fine-tuned to the Brazil mBRSET dataset to assess domain robustness (portable camera vs. curated data). Generalization was strengthened with a diverse augmentation stack (as on p.12): rotations, horizontal/vertical flips, random crop/resize, color jitter, and random erasing. Qualitatively, Grad-CAM maps show that augmentation helps the model focus on clinically plausible retinal regions across DR-positive and control cases.
 
@@ -50,7 +54,6 @@ utils/       # metrics, plotting, helper functions
 * **Stage 1 (RetinaMNIST)**: Train ResNet-50 with/without augmentation.
 * **Stage 2 (mBRSET)**: Transfer learning and fine-tuning.
 * **Augmentations (p.12)**: rotation, flipping, cropping/resizing, color jitter, random erasing.
-* Default hyperparameters: batch size, epochs, learning rate as in `notebooks/01_train_retinaminst.ipynb`.
 
 ---
 
