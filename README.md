@@ -1,8 +1,11 @@
-![Project Thumbnail](figures/01Thumbnail.png)
-
 # Trustworthiness and Uncertainty in Medical AI: A Case Study Using a Diabetic Retinopathy Dataset
 
-Hyunmin Choi, Hojun Jeong, Hyungjin Yoon, Minseok Han, Junsoo Seo, Minkyeong Kim 
+![Project Thumbnail](figures/01Thumbnail.png)
+
+Hyunmin Choi<sup>†</sup>, Hojun Jeong<sup>†</sup>, Hyungjin Yoon<sup>†</sup>, Minseok Han<sup>†</sup>, Junsoo Seo<sup>†</sup>, Minkyeong Kim<sup>†</sup>
+
+<sub><sup>†</sup> Equal contribution</sub>
+ 
 ---
 
 ### Summary
