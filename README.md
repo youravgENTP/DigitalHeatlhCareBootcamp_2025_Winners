@@ -91,7 +91,7 @@ If you use this repository, please cite as:
 ```bibtex
 @misc{digitalhealthcarebootcamp2025,
   title        = {Trustworthiness and Uncertainty in Medical AI: A Case Study Using a Diabetic Retinopathy Dataset},
-  author       = {Choi, Hyunmin and Jeong, Hojun and Yoon, Hyungjin and Han, Minseok and Seo, Junsoo and Kim, Minkyeong},
+  author       = {Kim, Minkyeong and Han, Minseok and Jeong, Hojun and Choi, Hyunmin and Seo, Junsoo and Yoon, Hyungjin},
   year         = {2025},
   note         = {Digital Health Care Bootcamp 2025, Yonsei University College of Medicine},
   url          = {https://github.com/youravgENTP/DigitalHeatlhCareBootcamp_2025_Winners}
@@ -100,6 +100,12 @@ If you use this repository, please cite as:
 
 ---
 
-### Acknowledgements
+### References
 
-We acknowledge the creators of the RetinaMNIST and mBRSET dataset, and the broader research community whose methods and datasets enabled this project.
+- Wong TY, Cheung CMG, Larsen M, Sharma S, Simó R. *Diabetic retinopathy.* Nat Rev Dis Primers. 2016;2:16012.  
+- Yang J, Shi R, Wei D, Liu Z, Zhao L, Ke B, et al. *MedMNIST v2 – A large-scale lightweight benchmark for 2D and 3D biomedical image classification.* Sci Data. 2023;10:41.  
+- Liu R, Wang X, Wu Q, Dai L, Fang X, Yan T, et al. *DeepDRiD: Diabetic Retinopathy—Grading and Image Quality Estimation Challenge.* Patterns. 2022;3(6):100512.  
+- Lakshminarayanan B, Pritzel A, Blundell C. *Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles.* arXiv [preprint]. 2016 Dec 5;abs/1612.01474.  
+- Jospin LV, Buntine W, Boussaid F, Laga H, Bennamoun M. *Hands-on Bayesian Neural Networks – a Tutorial for Deep Learning Users.* arXiv [preprint]. 2020 Jul 14 [cited 2025 Jul 24];v1.  
+- Curran K, Peto T, Jonas JB, Friedman D, Kim JE, Leasher J, Tapply I, Fernandes AG, Cicinelli MV, Arrigo A, Leveziel N, Resnikoff S, Taylor HR, Sedighi T, Flaxman S, Bikbov MM, Braithwaite T, Bron A, Cheng C, … Zheng P. (2024). *Global estimates on the number of people blind or visually impaired by diabetic retinopathy: a meta-analysis from 2000 to 2020.* Eye, 38(11), 2047–2057. https://doi.org/10.1038/s41433-024-03101-5  
+
