@@ -1,4 +1,4 @@
-# Trustworthiness and Uncertainty in Medical AI: A Case Study Using a Diabetic Retinopathy Dataset
+# Trustworthiness and Uncertainty in Medical AI: \\ A Case Study Using a Diabetic Retinopathy Dataset
 
 ![Project Thumbnail](figures/01Thumbnail.png)
 
