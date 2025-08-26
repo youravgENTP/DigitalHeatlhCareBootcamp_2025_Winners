@@ -2,9 +2,10 @@
 
 ![Project Thumbnail](figures/01Thumbnail.png)
 
-Hyunmin Choi<sup>†</sup>, Hojun Jeong<sup>†</sup>, Hyungjin Yoon<sup>†</sup>, Minseok Han<sup>†</sup>, Junsoo Seo<sup>†</sup>, Minkyeong Kim<sup>†</sup>
+Minkyeong Kim<sup>†</sup>, Minseok Han<sup>†</sup>, Hojun Jeong<sup>†</sup>, Hyunmin Choi<sup>†</sup>, Junsoo Seo<sup>†</sup>, Hyungjin Yoon<sup>†</sup>  
 
-<sub><sup>†</sup> Equal contribution</sub>
+<sub><sup>†</sup> Equal contribution, alphabetically ordered (Korean)</sub>
+
  
 ---
 
