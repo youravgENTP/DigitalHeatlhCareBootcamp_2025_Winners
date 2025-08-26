@@ -11,20 +11,20 @@ Minkyeong Kim<sup>†</sup>, Minseok Han<sup>†</sup>, Hojun Jeong<sup>†</sup
 
 ### Summary
 
-![Project Thumbnail](figures/03Workflow.png)
+![workflow](figures/03Workflow.png)
 
 This project builds a reliable end-to-end pipeline for diabetic retinopathy (DR) screening that centers data quality, calibration, and interpretability. We re-labeled RetinaMNIST using ICDR grades (0–4), collapsing grades 1–4 into DR-positive and grade 0 into non-DR to form a clinically meaningful binary task. To control input quality, we targeted common optical artifacts: we first detected the circular fundus boundary and blackened all pixels outside it to remove text/markings; then we screened for crescent-shaped flare by comparing mean intensities in the outer ring (top/bottom/left/right) against the center. These procedures (see p.11 and the logic in `src/Preprocess.py`) reduce non-pathological cues and lighting bias before training.
 
-![Project Thumbnail](figures/02Data_preprocessing.png)
+![dat preprocessing](figures/02Data_preprocessing.png)
 
 We trained ResNet-50 on RetinaMNIST and then transferred/fine-tuned to the Brazil mBRSET dataset to assess domain robustness (portable camera vs. curated data). Generalization was strengthened with a diverse augmentation stack (as on p.12): rotations, horizontal/vertical flips, random crop/resize, color jitter, and random erasing. Qualitatively, Grad-CAM maps show that augmentation helps the model focus on clinically plausible retinal regions across DR-positive and control cases.
 
-![Project Thumbnail](figures/12Types_of_Augmentations_used.png)
+![augmentations](figures/12Types_of_Augmentations_used.png)
 
 Beyond accuracy, we emphasized trustworthy probabilities. We implemented deep ensembles and Monte Carlo Dropout (p ∈ {0.001, 0.01, 0.1, 0.2}) and evaluated Expected Calibration Error (ECE), Brier score, and Negative Log-Likelihood (NLL). MC Dropout yielded only marginal improvements in Brier and ECE—alongside small gains in Accuracy within our uncertainty-evaluation setup—while we also observed a slight decrease in peak accuracy compared with a fully committed CNN trained/evaluated without dropout. We therefore explored multiple dropout rates and ensemble sizes to characterize this trade-off. Grad-CAM visualizations complement these findings by highlighting decision-relevant retinal regions, supporting transparent model behavior.
 
-![Project Thumbnail](figures/06Ensemble_outline.png)
-![Project Thumbnail](figures/07MC_dropout_outline.png)
+![ensemble outline](figures/06Ensemble_outline.png)
+![mc dropout outline](figures/07MC_dropout_outline.png)
 
 ---
 
@@ -77,9 +77,12 @@ utils/       # metrics, plotting, helper functions
 ### Results
 
 * **Accuracy and F1**: improved with augmentation and transfer learning.
-
-
+![reuslts1](figures/04No_Aug_vs_Aug.png)
+![reuslts2](figures/04No_Aug_vs_Aug_2.png)
 * **Uncertainty metrics**: MC Dropout gave small improvements in Brier/ECE, ensembles more stable.
+![reuslts3](figures/09CNN_ensemble_metrics.png)
+![reuslts4](figures/10CNN_ensemble_uncertainty_metric.png)
+![results5](figures/11MC_dropout_uncertainty_metric.png)
 * **Limitations**: minor decrease in accuracy compared to dropout-free CNN baselines.
 
 ---
