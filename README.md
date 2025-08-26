@@ -101,4 +101,4 @@ If you use this repository, please cite as:
 
 ### Acknowledgements
 
-We acknowledge the Digital Health Care Bootcamp (Yonsei University College of Medicine), RetinaMNIST and mBRSET dataset creators, and the broader research community whose methods and datasets enabled this project.
+We acknowledge the creators of the RetinaMNIST and mBRSET dataset, and the broader research community whose methods and datasets enabled this project.
