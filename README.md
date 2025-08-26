@@ -20,7 +20,7 @@ We trained ResNet-50 on RetinaMNIST and then transferred/fine-tuned to the Brazi
 
 ![Project Thumbnail](figures/12Types_of_Augmentations_used.png)
 
-Beyond accuracy, we emphasized trustworthy probabilities. We implemented deep ensembles and Monte Carlo Dropout (p ∈ {0.001, 0.01, 0.1, 0.2}) and evaluated Expected Calibration Error (ECE), Brier score, and Negative Log-Likelihood (NLL). **MC Dropout yielded only marginal improvements in Brier and ECE—alongside small gains in Accuracy within our uncertainty-evaluation setup—while we also observed a slight decrease in peak accuracy compared with a fully committed CNN trained/evaluated without dropout.** We therefore explored multiple dropout rates and ensemble sizes to characterize this trade-off. Grad-CAM visualizations complement these findings by highlighting decision-relevant retinal regions, supporting transparent model behavior.
+Beyond accuracy, we emphasized trustworthy probabilities. We implemented deep ensembles and Monte Carlo Dropout (p ∈ {0.001, 0.01, 0.1, 0.2}) and evaluated Expected Calibration Error (ECE), Brier score, and Negative Log-Likelihood (NLL). MC Dropout yielded only marginal improvements in Brier and ECE—alongside small gains in Accuracy within our uncertainty-evaluation setup—while we also observed a slight decrease in peak accuracy compared with a fully committed CNN trained/evaluated without dropout. We therefore explored multiple dropout rates and ensemble sizes to characterize this trade-off. Grad-CAM visualizations complement these findings by highlighting decision-relevant retinal regions, supporting transparent model behavior.
 
 ![Project Thumbnail](figures/06Ensemble_outline.png)
 ![Project Thumbnail](figures/07MC_dropout_outline.png)
