@@ -5,7 +5,6 @@
 **Minkyeong Kim<sup>1,†</sup>, Minseok Han<sup>2,†</sup>, Hojun Jeong<sup>2,†</sup>, Hyunmin Choi<sup>2,†</sup>, Junsoo Seo<sup>3,†</sup>, Hyungjin Yoon<sup>4,5,†</sup>**  
 
 <sub><sup>†</sup> Equal contribution, alphabetically ordered (Korean)</sub>  
-
 <sub><sup>1</sup> College of Nursing, Yonsei University</sub>  
 <sub><sup>2</sup> College of Medicine, Yonsei University</sub>  
 <sub><sup>3</sup> College of Engineering, Yonsei University</sub>  
