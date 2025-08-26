@@ -78,7 +78,7 @@ utils/       # metrics, plotting, helper functions
 
 * **Accuracy and F1**: improved with augmentation and transfer learning.
 ![reuslts1](figures/04No_Aug_vs_Aug.png)
-![reuslts2](figures/04No_Aug_vs_Aug_2.png)
+![reuslts2](figures/05No_Aug_vs_Aug_2.png)
 * **Uncertainty metrics**: MC Dropout gave small improvements in Brier/ECE, ensembles more stable.
 ![reuslts3](figures/09CNN_ensemble_metrics.png)
 ![reuslts4](figures/10CNN_ensemble_uncertainty_metric.png)
